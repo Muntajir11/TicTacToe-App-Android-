@@ -11,6 +11,8 @@ import Snackbar from "react-native-snackbar";
 import Icons from "./components/Icons";
 import { Pressable } from "react-native";
 import Sound from 'react-native-sound';
+import GameIcon from './components/GameIcon';
+import Instructions from "./components/Instructions";
 
 
 const App = () => {
@@ -139,8 +141,13 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style= {styles.container}>
       <StatusBar />
+    <View >
+      <View style={styles.headerView}>
+        <Text style={styles.headerText}>Tic Tac Toe </Text> 
+        <GameIcon/>  
+      </View>
 
       {gameWinner ? (
         <View style={[styles.playerInfo, styles.winnerInfo]}>
@@ -179,11 +186,22 @@ const App = () => {
         {gameWinner ? 'Start new game' : 'Restart game'}  
         </Text>
       </Pressable>
+      
+      <View style= {styles.instructionsContainer}>
+      < Instructions />
+      </View>
+
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+   
+  },
+
   playerInfo: {
     height: 56,
 
@@ -253,6 +271,31 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontWeight: "500",
   },
+  headerView: {
+    height: 56,
+    flexDirection: "row",
+    margin: 12,
+    justifyContent: "center",
+    alignItems: "center",
+
+  },
+
+  headerText: {
+    fontSize: 36,
+    fontWeight: "bold",
+    color: "#8D3DAF",
+  },
+
+  instructionsContainer:{
+    marginHorizontal: 10,
+    marginTop: 20,
+    borderRadius: 4,
+  
+    shadowColor: "#333",
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+  }
 });
 
 export default App;
