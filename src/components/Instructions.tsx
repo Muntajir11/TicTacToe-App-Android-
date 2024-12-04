@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 const Instructions = () => {
   return (
     <View style={styles.instructionsContainer}>
-      <Text style={styles.instructionsTitle}>How to Play</Text>
+      <Text style={styles.instructionsTitle}>How to Play❔</Text>
       <Text style={styles.instructionsText}>
         1. The game is played on a grid that's 3 squares by 3 squares.
       </Text>
